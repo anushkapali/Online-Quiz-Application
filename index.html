@@ -216,8 +216,8 @@ window.onload = function() {
   if (startBtn) startBtn.addEventListener("click", startQuiz);
 };
 
-const SERVICE_ID = "service_4auh4nq";
-const TEMPLATE_ID = "template_mypv469";
+const SERVICE_ID = "service_kkqsbv8";
+const TEMPLATE_ID = "template_mhledvo";
 
 let leaderboardData = JSON.parse(localStorage.getItem("leaderboard")) || [];
 let currentUser = "";
@@ -226,14 +226,14 @@ const totalQuestions = 10;
 
 function startQuiz() {
   const first = document.getElementById("firstName").value.trim();
-  const last = document.getElementById("lastName").value.trim();
+  const last  = document.getElementById("lastName").value.trim();
   if (!first || !last) {
     document.getElementById("nameError").style.display = "block";
     return;
   }
   currentUser = first + " " + last;
   document.getElementById("start").style.display = "none";
-  document.getElementById("quiz").style.display = "block";
+  document.getElementById("quiz").style.display  = "block";
 }
 
 async function sendScoreEmail(name, score, total) {
@@ -241,7 +241,7 @@ async function sendScoreEmail(name, score, total) {
     user_name: name,
     quiz_score: `${score}/${total}`,
     feedback_message: "No feedback yet",
-    email: "quizapp662@gmail.com"
+    email: "collegew375@gmail.com"
   };
   try {
     await emailjs.send(SERVICE_ID, TEMPLATE_ID, params);
@@ -327,7 +327,7 @@ function submitFeedback(event) {
     user_name: currentUser,
     quiz_score: `${finalScore}/${totalQuestions}`,
     feedback_message: feedback,
-    email: "quizapp662@gmail.com"
+    email: "collegew375@gmail.com"
   };
 
   emailjs.send(SERVICE_ID, TEMPLATE_ID, params)
